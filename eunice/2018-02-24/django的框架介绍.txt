@@ -1,0 +1,13 @@
+框架结构：
+项目名
+	项目名
+		__init__.py  一个空的文件，用它标识一个目录为python的标准包。
+		settings.py  django项目的配置文件，包括django模块应用配置，数据库配置，模板配置等。
+		urls.py	     django项目的url声明。
+		wsgi.py      为wsgi兼容的web服务项目的切入点。
+	manage.py            一个命令行工具，可以让你在使用django项目是以不同的方式进行交互。
+
+构建框架: django-admin startproject [name] 
+构建项目: python manage.py startapp [name]
+
+--- 32 ---项目结构介绍

@@ -1,0 +1,20 @@
+[{
+    "table": {
+        "db_in": "wms_warehouse_stockin",
+        "db_in_detail": "wms_warehouse_stockin_201804",
+        "db_out": "wms_warehouse_stockout",
+        "db_out_detail": "wms_warehouse_stockout_201804",
+        "db_out_req": "wms_warehouse_stockout_request_201804",
+        "db_out_req_detail": "wms_warehouse_stockout_request_detail_201804",
+        "db_out_tary_detail": "wms_warehouse_stockout_tray_detail_201804",
+        "db_inventory": "wms_warehouse_inventory",
+        "db_check": "wms_warehouse_check",
+        "db_check_detail": "wms_warehouse_check_detail_201804",
+        "db_po": "scm_purchase_order",
+        "db_po_detail": "scm_purchase_order_detail"
+    }
+},
+ {  "a" : {
+        "b": "a"
+    }}
+]

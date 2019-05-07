@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "i-steps": "../../../plugin/iview/steps/index",
+    "i-step": "../../../plugin/iview/step/index",
+    "i-tab-bar": "../../../plugin/iview/tab-bar/index",
+    "i-tab-bar-item": "../../../plugin/iview/tab-bar-item/index"
+  },
+  "navigationBarTitleText": "信小助给你排的计划"
+}

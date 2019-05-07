@@ -1,0 +1,9 @@
+/**index.wxss**/
+.usermotto {
+  margin-top: 100px;
+}
+
+.user-motto {
+  font-size: 8px;
+  text-align: center
+}

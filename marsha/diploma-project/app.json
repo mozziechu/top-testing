@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/stu/stu-self/stu-self",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/stu/stu",
+    "pages/stu/stu-plan/stu-plan"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "信小助",
+    "navigationBarTextStyle": "black"
+  }
+}

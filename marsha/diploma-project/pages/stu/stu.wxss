@@ -1,0 +1,12 @@
+/* pages/stu/student.wxss */
+
+.logo-style {
+  text-align: center;
+}
+
+.center-title {
+  margin: 10px;
+  text-align: center;
+  font-size: 18px;
+  color: #9e9e9e;
+}

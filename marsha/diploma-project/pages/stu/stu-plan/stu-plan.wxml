@@ -1,0 +1,19 @@
+<!--pages/stu/stu-plan/stu-plan.wxml-->
+<view class="scroll-view">
+  <i-steps current="{{verticalCurrent}}" direction="vertical">
+    <i-step wx:for="{{planArry}}" wx:key="index">
+      <view slot="title">
+        {{item.startDate}} - {{item.endDate}}
+      </view>
+      <view slot="content">
+        第 {{index+1}} 周 : {{item.memo}}
+      </view>
+    </i-step>
+  </i-steps>
+</view>
+
+<i-tab-bar current="{{ current }}" bindchange="handleChange" fixed='true'>
+  <i-tab-bar-item key="stu" icon="homepage" current-icon="homepage_fill" title="信小助"></i-tab-bar-item>
+  <i-tab-bar-item key="stu-plan" icon="activity" current-icon="activity_fill" title="安排"></i-tab-bar-item>
+  <i-tab-bar-item key="stu-self" icon="mine" current-icon="mine_fill" title="我的"></i-tab-bar-item>
+</i-tab-bar>

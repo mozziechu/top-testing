@@ -1,0 +1,19 @@
+{
+  "usingComponents": {
+    "i-icon": "/plugin/iview/icon/index",
+    "i-notice-bar": "/plugin/iview/notice-bar/index",
+    "i-cell-group": "/plugin/iview/cell-group/index",
+    "i-cell": "/plugin/iview/cell/index",
+    "i-tab-bar": "/plugin/iview/tab-bar/index",
+    "i-tab-bar-item": "/plugin/iview/tab-bar-item/index",
+    "i-badge": "/plugin/iview/badge/index",
+    "i-grid": "/plugin/iview/grid/index",
+    "i-grid-item": "/plugin/iview/grid-item/index",
+    "i-grid-icon": "/plugin/iview/grid-icon/index",
+    "i-grid-label": "/plugin/iview/grid-label/index",
+    "i-row": "/plugin/iview/row/index",
+    "i-col": "/plugin/iview/col/index"
+  },
+  "navigationBarBackgroundColor": "#61c3ee",
+  "navigationBarTitleText": "我的信小助"
+}

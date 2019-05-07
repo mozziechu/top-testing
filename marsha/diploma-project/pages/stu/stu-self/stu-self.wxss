@@ -1,0 +1,15 @@
+/* pages/stu/stu-self/stu-self.wxss */
+.main-top {
+  height: 165px;
+  background-color: #61c3ee;
+}
+
+.main-menu {
+  width: 90%;
+  margin: auto;
+  border: 0px;
+}
+
+.grid-style {
+  border: 0px !important;
+}

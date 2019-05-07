@@ -1,0 +1,54 @@
+<!--pages/stu/stu-self/stu-self.wxml-->
+<view>
+  <view class="userinfo main-top">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text class="userinfo-nickname">15计专本 | 20150566104</text>
+    </block>
+  </view>
+
+  <view class="main-menu">
+
+    <i-grid i-class="grid-style">
+      <i-grid-item i-class="grid-style">
+        <i-grid-icon>
+          <i-icon type="dynamic" size="32" color="#54b5e0" />
+        </i-grid-icon>
+        <i-grid-label>我的毕设</i-grid-label>
+      </i-grid-item>
+      <i-grid-item i-class="grid-style">
+        <i-grid-icon>
+          <i-icon type="brush" size="32" color="#ff5b5b" />
+        </i-grid-icon>
+        <i-grid-label>我的申请</i-grid-label>
+      </i-grid-item>
+      <i-grid-item i-class="grid-style">
+        <i-grid-icon>
+          <i-icon type="createtask" size="32" color="#ff8c40" />
+        </i-grid-icon>
+        <i-grid-label>我的周报</i-grid-label>
+      </i-grid-item>
+    </i-grid>
+
+    <i-cell-group>
+      <i-cell title="账号管理" is-link></i-cell>
+    </i-cell-group>
+
+    <i-cell-group>
+      <i-cell title="实习材料" is-link url=""></i-cell>
+      <i-cell title="中期汇报" is-link url=""></i-cell>
+      <i-cell title="我的消息">
+        <i-badge slot="footer" count="3"></i-badge>
+      </i-cell>
+    </i-cell-group>
+  </view>
+</view>
+
+
+<i-tab-bar current="{{ current }}" bindchange="handleChange" fixed='true'>
+  <i-tab-bar-item key="stu" icon="homepage" current-icon="homepage_fill" title="信小助"></i-tab-bar-item>
+  <i-tab-bar-item key="stu-plan" icon="activity" current-icon="activity_fill" title="安排"></i-tab-bar-item>
+  <i-tab-bar-item key="stu-self" icon="mine" current-icon="mine_fill" title="我的"></i-tab-bar-item>
+</i-tab-bar>

@@ -12,36 +12,56 @@
   <view class="main-menu">
 
     <i-grid i-class="grid-style">
+    <navigator url="/pages/mentor-allocation/mentor-allocation">
       <i-grid-item i-class="grid-style">
         <i-grid-icon>
           <i-icon type="dynamic" size="32" color="#54b5e0" />
         </i-grid-icon>
-        <i-grid-label>我的毕设</i-grid-label>
+        <i-grid-label>导师分配</i-grid-label>
       </i-grid-item>
-      <i-grid-item i-class="grid-style">
+    </navigator>
+      
+<navigator url='/pages/project-declaration/project-declaration'>
+<i-grid-item i-class="grid-style">
         <i-grid-icon>
           <i-icon type="brush" size="32" color="#ff5b5b" />
         </i-grid-icon>
-        <i-grid-label>我的申请</i-grid-label>
+        <i-grid-label>课题申报</i-grid-label>
       </i-grid-item>
-      <i-grid-item i-class="grid-style">
+</navigator>
+      
+<navigator url='/pages/student-application/student-application'>
+<i-grid-item i-class="grid-style">
         <i-grid-icon>
           <i-icon type="createtask" size="32" color="#ff8c40" />
         </i-grid-icon>
-        <i-grid-label>我的周报</i-grid-label>
+        <i-grid-label>学生申请</i-grid-label>
       </i-grid-item>
+</navigator>
+      
+
     </i-grid>
 
-    <i-cell-group>
-      <i-cell title="账号管理" is-link></i-cell>
-    </i-cell-group>
+    <navigator url='../../project-declaration/project-declaration'>
+      <i-cell-group>
+        <i-cell title="账号管理" is-link></i-cell>
+      </i-cell-group>
+    </navigator>
 
     <i-cell-group>
-      <i-cell title="实习材料" is-link url=""></i-cell>
-      <i-cell title="中期汇报" is-link url=""></i-cell>
-      <i-cell title="我的消息">
-        <i-badge slot="footer" count="3"></i-badge>
-      </i-cell>
+      <navigator url='../../materials/materials'>
+        <i-cell title="实习材料" is-link url=""></i-cell>
+      </navigator>
+
+      <navigator url='../../interim-report/interim-report'>
+        <i-cell title="中期汇报" is-link url=""></i-cell>
+      </navigator>
+
+      <navigator url='../../my-news/my-news'>
+        <i-cell title="我的消息">
+          <i-badge slot="footer" count="3"></i-badge>
+        </i-cell>
+      </navigator>
     </i-cell-group>
   </view>
 </view>

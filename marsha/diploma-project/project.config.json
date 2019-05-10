@@ -13,12 +13,14 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.6.0",
-	"appid": "wx0a18fe010c9b14b9",
+	"appid": "wxc4524a9497bb1bf0",
 	"projectname": "diploma-project",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

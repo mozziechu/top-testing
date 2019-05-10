@@ -1,0 +1,39 @@
+<!--pages/weekly/weekly.wxml-->
+<view>
+  <view style='width:70%;float:left;' class="section">
+    <input placeholder="搜索..." auto-focus />
+  </view>
+  <view style='width:30%;float:left;text-align:center;'>
+    取消
+  </view>
+  <view style='clear:both'></view>
+</view>
+<view class='weekly'>
+  <i-row>
+    <i-col offset="1" span="22" i-class="class1">
+
+      <i-row i-class="material" wx:for="{{items}}" wx:key="key">
+
+        <i-col offset="1" span="8" i-class="list">
+          <view>
+            <view style='font-size:13px;margin-top:10px;'>{{item.id}}</view>
+            <view style='font-size:12px;margin-top:10px;margin-bottom:10px;'>{{item.major}}</view>
+          </view>
+        </i-col>
+
+        <i-col span="8" i-class="submit">
+          <view style='font-size:13px;line-height:63px;'>
+            <li style="color:rgb(95, 216, 247);">{{item.title}}
+              <span style="color:rgb(247, 119, 0)">
+                <b style="color:gray;">|</b>{{item.title1}}</span>
+            </li>
+          </view>
+        </i-col>
+
+        <i-col span="6" i-class="particulars">
+          <navigator style='font-size:13px;line-height:63px;' url="/pages/examine-weekly/examine-weekly">{{item.details}}</navigator>
+        </i-col>
+      </i-row>
+    </i-col>
+  </i-row>
+</view>

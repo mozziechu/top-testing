@@ -1,0 +1,17 @@
+  /* pages/project-declaration/project-declaration.wxss */
+  /* 盒子边框线 */
+  .class1{
+  height: 100%;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+ }
+
+.material{
+  border-bottom: 1px solid black;
+}
+.submit{
+  text-align: center;
+}
+.particulars{
+  text-align: center;
+}

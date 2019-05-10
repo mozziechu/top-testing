@@ -1,0 +1,14 @@
+/* pages/reporting-details/reporting-details.wxss */
+/* 盒子格式 */
+.class1{
+  width: 90%;
+  height: 100%;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  line-height: 30px;
+  font-size: 13px;
+  margin: auto;
+  margin-top: 10px;
+  background-color: #60C3ED;
+  color: white
+ }

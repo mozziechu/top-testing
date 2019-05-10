@@ -1,0 +1,36 @@
+<!--pages/examine/examine.wxml-->
+<view class='weekly'>
+  <i-row>
+    <i-col offset="1" span="22" i-class="class1">
+      <i-row i-class="material" wx:for="{{items}}" wx:key="key">
+        <i-col offset="1" span="10" i-class="submit">
+          <view style='font-size:16px;line-height:40px;font-weight：600'>
+            <li>{{item.title}}</li>
+          </view>
+        </i-col>
+        <i-col  span="11" i-class="particulars">
+          <view style='font-size:13px;line-height:40px;'>{{item.details}}</view>
+        </i-col>
+      </i-row>
+    </i-col>
+  </i-row>
+</view>
+
+<view class='weekly'>
+  <i-row>
+    <i-col offset="1" span="22" i-class="class1">
+      <i-row i-class="material" wx:for="{{items1}}" wx:key="key">
+        <i-col offset="1" span="10">
+          <view style='font-size:16px;line-height:40px;font-weight：600'>
+            <li>{{item.title}}</li>
+          </view>
+        </i-col>
+        <i-col  span="11">
+          <view style='font-size:13px;line-height:40px;text-align: center;'>{{item.details}}</view>
+        </i-col>
+      </i-row>
+    </i-col>
+  </i-row>
+</view>
+
+

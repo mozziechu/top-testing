@@ -1,15 +1,32 @@
 {
   "pages": [
+    
     "pages/stu/stu-self/stu-self",
     "pages/index/index",
     "pages/logs/logs",
     "pages/stu/stu",
-    "pages/stu/stu-plan/stu-plan"
+    "pages/stu/stu-plan/stu-plan",
+    "pages/double-allocation/double-allocation",
+    "pages/examine/examine",
+    "pages/weekly/weekly",
+    "pages/check-weekly/check-weekly",
+    "pages/graduation/graduation",
+    "pages/materials/materials",
+    "pages/interim-report/interim-report",
+    "pages/examine-weekly/examine-weekly",
+    "pages/examine-graduation/examine-graduation",
+    "pages/reporting-details/reporting-details",
+    "pages/my-news/my-news",
+    "pages/mentor-allocation/mentor-allocation",
+    "pages/project-declaration/project-declaration",
+    "pages/student-application/student-application"
+
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "信小助",
     "navigationBarTextStyle": "black"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

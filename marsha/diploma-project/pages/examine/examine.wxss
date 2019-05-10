@@ -1,0 +1,20 @@
+/* pages/examine/examine.wxss */
+/* 盒子边框线 */
+.class1{
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+}
+.submit{
+  border-bottom: 1px solid rgb(216, 216, 216);
+  margin-bottom: 10px;
+}
+.particulars{
+  text-align: center;
+  border-bottom: 1px solid rgb(216, 216, 216);
+  margin-bottom: 10px;
+
+}
+/* 列表偏移 */
+.weekly{
+  margin-top: 50px;
+}

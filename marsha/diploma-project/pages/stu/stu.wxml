@@ -10,40 +10,52 @@
   </view>
 
   <i-grid>
-    <i-grid-item>
-      <i-grid-icon>
-        <i-icon type="group" size="28" color="#80848f" />
-      </i-grid-icon>
-      <i-grid-label>双选分配</i-grid-label>
-    </i-grid-item>
+    <navigator url='../../pages/double-allocation/double-allocation'>
+      <i-grid-item>
+        <i-grid-icon>
+          <i-icon type="group" size="28" color="#80848f" />
+        </i-grid-icon>
+        <i-grid-label>双选分配</i-grid-label>
+      </i-grid-item>
+    </navigator>
 
-    <i-grid-item>
-      <i-grid-icon>
-        <i-icon type="task" size="28" color="#80848f" />
-      </i-grid-icon>
-      <i-grid-label>周报</i-grid-label>
-    </i-grid-item>
+    <navigator url='../../pages/weekly/weekly'>
+      <i-grid-item>
+        <i-grid-icon>
+          <i-icon type="task" size="28" color="#80848f" />
+        </i-grid-icon>
+        <i-grid-label>周报</i-grid-label>
+      </i-grid-item>
+    </navigator>
 
-    <i-grid-item>
-      <i-grid-icon>
-        <i-icon type="brush" size="28" color="#80848f" />
-      </i-grid-icon>
-      <i-grid-label>校外毕设</i-grid-label>
-    </i-grid-item>
+    <navigator url='../../pages/graduation/graduation'>
+      <i-grid-item>
+        <i-grid-icon>
+          <i-icon type="brush" size="28" color="#80848f" />
+        </i-grid-icon>
+        <i-grid-label>校外毕设</i-grid-label>
+      </i-grid-item>
+    </navigator>
   </i-grid>
+
+
   <i-grid>
-    <i-grid-item>
-      <i-grid-icon>
-        <i-icon type="brush" size="28" color="#80848f" />
-      </i-grid-icon>
-      <i-grid-label>实习材料</i-grid-label>
-    </i-grid-item>
-    <i-grid-item>
-      <i-grid-icon>
-        <i-icon type="brush" size="28" color="#80848f" />
-      </i-grid-icon>
-      <i-grid-label>期中汇报</i-grid-label>
-    </i-grid-item>
+    <navigator url='../../pages/materials/materials'>
+      <i-grid-item>
+        <i-grid-icon>
+          <i-icon type="brush" size="28" color="#80848f" />
+        </i-grid-icon>
+        <i-grid-label>实习材料</i-grid-label>
+      </i-grid-item>
+    </navigator>
+    <navigator url='../../pages/interim-report/interim-report'>
+      <i-grid-item>
+        <i-grid-icon>
+          <i-icon type="brush" size="28" color="#80848f" />
+        </i-grid-icon>
+        <i-grid-label>期中汇报</i-grid-label>
+      </i-grid-item>
+    </navigator>
   </i-grid>
 
   <view>

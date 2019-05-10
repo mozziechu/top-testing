@@ -1,0 +1,28 @@
+/* pages/examine-weekly/examine-weekly.wxss */
+/* 周报盒子边框 */
+.class1 {
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  line-height: 30px;
+  font-size: 13px;
+  margin-bottom: 20px;
+  background: rgb(176, 176, 176);
+}
+
+.class2 {
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  line-height: 30px;
+  font-size: 13px;
+  margin-bottom: 20px;
+  background: rgb(101, 197, 237);
+}
+
+.class3 {
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  line-height: 30px;
+  font-size: 13px;
+  margin-bottom: 20px;
+  background: rgb(251, 193, 155);
+}

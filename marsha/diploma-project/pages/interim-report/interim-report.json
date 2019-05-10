@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "i-card": "../../plugin/iview/card/index",
+    "i-row": "../../plugin/iview/row/index",
+    "i-col": "../../plugin/iview/col/index"
+  }
+}

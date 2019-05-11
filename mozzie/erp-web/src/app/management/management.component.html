@@ -1,0 +1,194 @@
+<!-- 标签页 -->
+<nz-tabset>
+  <nz-tab nzTitle="客户列表">
+    <!-- 新建订单 -->
+    <button nz-button nzType="primary" (click)="open()" style="float: right;margin-right: 15px;">新建订单</button>
+    <!-- 客户列表 -->
+    <button nz-button (click)="addRow()" nzType="primary" style="margin-left:83%;">添加新客户</button>
+    <nz-table #editRowTable nzBordered [nzData]="listOfData" [nzHideOnSinglePage]="true" [nzPageSize]="5">
+      <thead>
+        <tr>
+          <th nzWidth="15%">客户姓名</th>
+          <th>客户信息</th>
+          <th>客户需求</th>
+          <th>客户管理</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of editRowTable.data" class="editable-row">
+          <td>{{ data.name }}</td>
+          <td>{{ data.age }}</td>
+          <td>{{ data.address }}</td>
+          <td>
+            <a (click)="showModal()">编辑</a>&nbsp;&nbsp;&nbsp;
+            <a nz-popconfirm nzTitle="是否删除?" (nzOnConfirm)="deleteRow(data.id)">删除</a>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </nz-tab>
+  <nz-tab nzTitle="销售记录">
+    <!-- 销售记录 -->
+    <nz-list 
+    class="demo-loadmore-list" 
+    [nzDataSource]="list" 
+    [nzItemLayout]="'horizontal'" 
+    [nzLoading]="initLoading"
+    [nzRenderItem]="item" 
+    [nzLoadMore]="loadMore"
+    >
+      <ng-template #item let-item>
+        <nz-list-item 
+        [nzActions]="item.loading ? [] : [editAction, moreAction]"
+        >
+          <nz-skeleton 
+          [nzAvatar]="true" 
+          [nzActive]="true" 
+          [nzTitle]="false" 
+          [nzLoading]="item.loading"
+          >
+            <ng-template #editAction><a (click)="edit(item)">编辑</a></ng-template>
+            <ng-template #moreAction><a href="https://www.baidu.com">更多</a></ng-template>
+            <nz-list-item-meta [nzTitle]="nzTitle"
+              nzAvatar="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+              nzDescription="交易号：Y123456789，类型：卖出，金额：17000.00，交易方式  . . . . . . . . . . ."
+              >
+              <ng-template #nzTitle>
+                <a href="https://www.baidu.com">{{ item.name.last }}</a>
+              </ng-template>
+            </nz-list-item-meta>
+          </nz-skeleton>
+        </nz-list-item>
+      </ng-template>
+      <ng-template #loadMore>
+        <div class="loadmore">
+          <button nz-button *ngIf="!loadingMore" (click)="onLoadMore()">显示更多</button>
+        </div>
+      </ng-template>
+    </nz-list>
+  </nz-tab>
+</nz-tabset>
+
+<!-- 新建订单遮罩层 -->
+<nz-drawer
+      [nzBodyStyle]="{ height: 'calc(100% - 55px)', overflow: 'auto', 'padding-bottom': '53px' }"
+      [nzMaskClosable]="false"
+      [nzWidth]="720"
+      [nzVisible]="visible"
+      nzTitle="新建订单"
+      (nzOnClose)="close()"
+    >
+      <form nz-form>
+        <div nz-row nzGutter="8">
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+                <nz-form-label>收件人</nz-form-label>
+              <nz-form-control>
+                <input nz-input placeholder="收件人" />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+                <nz-form-label>手机</nz-form-label>
+                <nz-form-control>
+                  <input type="text" nz-input placeholder="手机" />
+                </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div nz-row nzGutter="8">
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label>总金额</nz-form-label>
+              <nz-form-control>
+                <input  nz-input placeholder="Basic usage" style="width:100%;" placeholder="总金额"/>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+                <nz-form-label>地址</nz-form-label>
+                <nz-form-control>
+                  <nz-cascader style="width:100%;" 
+                    [nzChangeOn]="validate"
+                    [nzOptions]="nzOptions"
+                  >
+                  </nz-cascader>
+                </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div nz-row nzGutter="8">
+          <div nz-col nzSpan="6">
+            <nz-form-item>
+                <nz-form-label>商品编码</nz-form-label>
+              <nz-form-control>
+                <input nz-input placeholder="商品编码" />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="6">
+            <nz-form-item>
+                <nz-form-label>商品标题</nz-form-label>
+                <nz-form-control>
+                  <input type="text" nz-input placeholder="商品标题" />
+                </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="6">
+            <nz-form-item>
+                <nz-form-label>商品属性</nz-form-label>
+              <nz-form-control>
+                <input nz-input placeholder="商品属性" />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="6">
+            <nz-form-item>
+                <nz-form-label>商品数量</nz-form-label>
+                <nz-form-control>
+                  <input type="text" nz-input placeholder="商品数量" />
+                </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div nz-row nzGutter="8">
+          <div nz-col nzSpan="24">
+            <nz-form-item>
+              <nz-form-label>备注</nz-form-label>
+              <nz-form-control>
+                <textarea
+                  nz-input
+                  placeholder="请输入备注"
+                  [nzAutosize]="{ minRows: 4, maxRows: 4 }"
+                ></textarea>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+      </form>
+      <div class="footer">
+        <button type="button" (click)="close()" class="ant-btn" style="margin-right: 8px;"><span>取消</span></button>
+        <button type="button" (click)="close()" class="ant-btn ant-btn-primary"><span>确定</span></button>
+      </div>
+    </nz-drawer>
+
+<!-- 编辑 -->
+    <nz-modal
+      [(nzVisible)]="isVisible"
+      nzTitle="客户信息编辑"
+      (nzOnCancel)="handleCancel()"
+      (nzOnOk)="handleOk()"
+      [nzOkLoading]="isOkLoading"
+    >
+      <p>客户姓名：</p>
+      <input nz-input placeholder="请编辑客户姓名"  />
+      <p></p>
+      <p>客户信息：</p>
+      <input nz-input placeholder="请编辑客户信息"  />
+      <p></p>
+      <p>客户需求：</p>
+      <input nz-input placeholder="请编辑客户需求" />
+      <p></p>
+    </nz-modal>

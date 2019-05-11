@@ -1,0 +1,145 @@
+<nz-tabset>
+  <nz-tab nzTitle="仓库存储列表">
+    <nz-drawer
+  [nzBodyStyle]="{ height: 'calc(100% - 55px)', overflow: 'auto', 'padding-bottom': '53px' }"
+  [nzMaskClosable]="false"
+  [nzWidth]="720"
+  [nzVisible]="visible"
+  nzTitle="Create"
+  (nzOnClose)="close()"
+>
+  <form nz-form>
+    <div nz-row nzGutter="8">
+      <div nz-col nzSpan="12">
+        <nz-form-item>
+          <nz-form-label>产品名称</nz-form-label>
+          <nz-form-control>
+            <input nz-input placeholder="please enter user name" />
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="12">
+        <nz-form-item>
+          <nz-form-label>产品来源</nz-form-label>
+          <nz-form-control>
+            <nz-input-group nzAddOnBefore="http://" nzAddOnAfter=".com">
+              <input type="text" nz-input placeholder="please enter url" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+    </div>
+    <div nz-row nzGutter="8">
+      <div nz-col nzSpan="12">
+        <nz-form-item>
+          <nz-form-label>产品所有者</nz-form-label>
+          <nz-form-control>
+            <nz-select nzPlaceHolder="Please select an owner"></nz-select>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="12">
+        <nz-form-item>
+          <nz-form-label>产品类型</nz-form-label>
+          <nz-form-control>
+            <nz-select nzPlaceHolder="Please choose the type"></nz-select>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+    </div>
+    <div nz-row nzGutter="8">
+      <div nz-col nzSpan="12">
+        <nz-form-item>
+          <nz-form-label>赞同人</nz-form-label>
+          <nz-form-control>
+            <nz-select nzPlaceHolder="Please choose the approver"></nz-select>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="12">
+        <nz-form-item>
+          <nz-form-label>存储时间</nz-form-label>
+          <nz-form-control>
+            <nz-range-picker></nz-range-picker>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+    </div>
+    <div nz-row nzGutter="8">
+      <div nz-col nzSpan="24">
+        <nz-form-item>
+          <nz-form-label>详细描述</nz-form-label>
+          <nz-form-control>
+            <textarea
+              nz-input
+              placeholder="please enter url description"
+              [nzAutosize]="{ minRows: 4, maxRows: 4 }"
+            ></textarea>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+    </div>
+  </form>
+  <div class="footer">
+    <button type="button" (click)="close()" class="ant-btn" style="margin-right: 8px;"><span>Cancel</span></button>
+    <button type="button" (click)="close()" class="ant-btn ant-btn-primary"><span>Submit</span></button>
+  </div>
+</nz-drawer>
+<nz-table #editRowTable nzBordered [nzData]="listOfData">
+  <button style="margin-left: 260px;" nz-button nzType="primary" (click)="open()">产品新增</button>
+  <thead>
+    <tr>
+      <th nzWidth="30%">产品名称</th>
+      <th>入库时间</th>
+      <th>产品区域</th>
+      <th>执行操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of editRowTable.data" class="editable-row">
+      <td>
+        <div class="editable-cell" *ngIf="editId !== data.id; else editTpl">
+          <div class="editable-cell-value-wrap" (click)="startEdit(data.id, $event)">
+            {{ data.name }}
+          </div>
+        </div>
+        <ng-template #editTpl>
+          <input type="text" nz-input [(ngModel)]="data.name" />
+        </ng-template>
+      </td>
+      <td>{{ data.age }}</td>
+      <td>{{ data.address }}</td>
+      <td>
+        <a nz-popconfirm nzTitle="Sure to delete?" (nzOnConfirm)="deleteRow(data.id)">出库/删除</a>
+      </td>
+    </tr>
+  </tbody>
+  <button nz-button (click)="addRow()" nzType="primary">快速入库</button> 
+</nz-table>
+  </nz-tab>
+  <nz-tab nzTitle="产品详情">
+    <div class="item_introduce">
+			<div class="cpjs">产品介绍</div>
+		</div>
+		<div class="item_text">
+			<p>仓库管理也叫仓储管理，英文Warehouse Management，
+				简称WM，指的是对仓储货物的收发、结存等活动的有效控制，其目的是为企业保证仓储货物的完好无损，
+				确保生产经营活动的正常进行，并在此基础上对各类货物的活动状况进行分类记录，以明确的图表方式表达仓储货物在数量、
+				品质方面的状况，以及所在的地理位置、部门、订单归属和仓储分散程度等情况的综合管理形式。</p>
+			<hr>
+			<p>仓储的目的是为了满足供应链上下游的需求。这与过去仅仅满足 “客户”的需求在深度与广度方面都有重大区别。
+				谁委托、谁提出需求，谁就是客户；客户可能是上游的生产者、可能是下游的零售业者，也可能是企业内部，
+				但仓储不能仅仅满足直接“客户”的需求，也应满足“间接”客户即客户的客户需求；仓储应该融入到供应链上下游之中，
+				根据供应链的整体需求确立仓储的角色定位与服务功能。</p>
+			<hr>
+			<p>仓储的条件是特定的有形或无形的场所与现代技术。说“特定”，是因为各个企业的供应链是特定的，
+				仓储的场所当然也是特定的；有形的场所当然就是指仓库、货场或储罐等，现代经济背景下，仓储也可以在虚拟的空间进行，
+				也需要许多现代技术的支撑，离开了现代仓储设施设备及信息化技术，也就没有现代仓储。</p>
+			<hr>
+			<p>首先，制定仓库管理制度。其实任何企业的管理都离开不了制度的约束，尤其是在仓库管理这方面，程序多，
+				项目繁杂，小到货物的摆放，大到全部货物的采购，都应该有一个可以遵循的制度，这样才能井井有条的来做，
+				井井有条就是仓库管理制度的核心内容，以条例管理，以制度执行，仓库管理才有效果。</p>
+			<hr>
+		</div>
+  </nz-tab>
+</nz-tabset>

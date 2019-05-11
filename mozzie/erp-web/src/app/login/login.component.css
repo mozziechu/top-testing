@@ -1,0 +1,18 @@
+.login-form {
+	height: 500px;
+	overflow: hidden;
+	margin-left: 40%;
+	margin-top: 10%;
+/*  background: blueviolet;*/
+  max-width: 300px;
+/*  background: url(../../assets/logo_bg.jpg);*/
+}
+
+.login-form-forgot {
+  float: right;
+  
+}
+
+.login-form-button {
+  width: 100%;
+}

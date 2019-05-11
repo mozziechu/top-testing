@@ -1,0 +1,31 @@
+*{margin: 0;padding: 0;list-style: none;}
+
+.header_left{
+		margin-left: 100px;
+		
+	}
+	.header_right{
+		float: right;
+}
+.title{
+		font-size: 30px;
+		color: white;
+		font-weight: bold;
+		line-height: 64px;
+		float: left;
+		font-family: "宋体";
+}
+.header_right ul li{
+		float: left;
+		
+		color: white;
+		line-height:64px;
+		margin-right: 40px;
+	}
+.logo {
+        width: 120px;
+        height: 31px;
+        background: rgba(255, 255, 255, 0.2);
+        margin: 16px 28px 16px 0;
+        float: left;
+}

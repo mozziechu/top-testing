@@ -1,0 +1,10 @@
+<p>
+  main works!
+</p>
+
+<a routerLink="./testone" routerLinkActive="active">router_1</a> | 
+<a routerLink="./setting" routerLinkActive="active">setting</a> | 
+<a [routerLink]="[{ outlets: { name: ['../../testtwo'] } }]">teststwo</a>
+<router-outlet></router-outlet>
+<router-outlet name="name"></router-outlet>
+

@@ -12,7 +12,7 @@
   <view class="main-menu">
 
     <i-grid i-class="grid-style">
-    <navigator url="/pages/mentor-allocation/mentor-allocation">
+    <navigator url="/pages/double-allocation/double-allocation">
       <i-grid-item i-class="grid-style">
         <i-grid-icon>
           <i-icon type="dynamic" size="32" color="#54b5e0" />
@@ -21,7 +21,7 @@
       </i-grid-item>
     </navigator>
       
-<navigator url='/pages/project-declaration/project-declaration'>
+<navigator url='/pages/double-allocation/double-allocation'>
 <i-grid-item i-class="grid-style">
         <i-grid-icon>
           <i-icon type="brush" size="32" color="#ff5b5b" />
@@ -42,20 +42,20 @@
 
     </i-grid>
 
-    <navigator url='../../project-declaration/project-declaration'>
+    <navigator url='/pages/double-allocation/double-allocation'>
       <i-cell-group>
         <i-cell title="账号管理" is-link></i-cell>
       </i-cell-group>
     </navigator>
 
     <i-cell-group>
-      <navigator url='../../materials/materials'>
+      <!-- <navigator url='../../materials/materials'>
         <i-cell title="实习材料" is-link url=""></i-cell>
       </navigator>
 
       <navigator url='../../interim-report/interim-report'>
         <i-cell title="中期汇报" is-link url=""></i-cell>
-      </navigator>
+      </navigator> -->
 
       <navigator url='../../my-news/my-news'>
         <i-cell title="我的消息">

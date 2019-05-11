@@ -1,0 +1,26 @@
+<nz-date-picker [(ngModel)]="date" (ngModelChange)="onChange($event)"></nz-date-picker>
+<br />
+
+<br />
+
+
+<div>
+  <nz-radio-group [(ngModel)]="radioValue">
+    <div>请选择售后站点</div>
+    <label nz-radio-button nzValue="A">杭州</label>
+    <label nz-radio-button nzValue="B">上海</label>
+    <label nz-radio-button nzValue="C">北京</label>
+    <label nz-radio-button nzValue="D">无锡</label>
+  </nz-radio-group>
+</div>
+<br>
+<br>
+<br>
+
+<input nz-input placeholder="Basic usage" [(ngModel)]="value" style="width:50%;height: 150px;" />
+
+<br>请对我们商品进行星级评价
+<br>
+<nz-rate [ngModel]="5"></nz-rate>
+<br>
+<button nz-button nzType="primary">提交</button>

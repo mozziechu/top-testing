@@ -1,0 +1,179 @@
+<nz-tabset>
+	<nz-tab nzTitle="产品列表">
+		<!-- 产品列表 -->
+		<div class="item_list">
+			<nz-table #nzTable [nzData]="listOfDisplayData" [nzPageSize]="4" [nzBordered]="true">
+				<thead>
+				  <tr>
+					<th nzCustomFilter>
+						产品名称
+					  <nz-dropdown nzTrigger="click" nzPlacement="bottomRight" [nzClickHide]="false" nzTableFilter #dropdown>
+						<i
+						  nz-icon
+						  nzType="search"
+						  class="ant-table-filter-icon"
+						  [class.ant-table-filter-open]="dropdown.nzVisible"
+						  nz-dropdown
+						></i>
+						<div class="search-box">
+						  <input type="text" nz-input placeholder="产品名称" [(ngModel)]="searchValue" />
+						  <button nz-button nzSize="small" nzType="primary" (click)="search()" class="search-button">搜索</button>
+						  <button nz-button nzSize="small" (click)="reset()">重置</button>
+						</div>
+					  </nz-dropdown>
+					</th>
+					<th>生产日期</th>
+					<th>产品信息</th>
+					<th>操作</th>
+				  </tr>
+				</thead>
+				<tbody>
+				  <tr *ngFor="let data of nzTable.data">
+					<td>{{ data.name }}</td>
+					<td>{{ data.date }}</td>
+					<td>{{ data.information }}</td>
+					<td>
+						<button nz-button (click)="open()" style="margin-top:15px;" >修改</button>
+						&nbsp;
+						<button nz-button nzType="primary" (click)="open1()">添加</button>
+						&nbsp;
+						<button nz-button nz-popconfirm nzType="danger" nzTitle="是否删除?" nzOkText="确定"
+								nzCancelText="取消" (nzOnConfirm)="ok()" (nzOnCancel)="no()" 
+						>删除</button>
+					</td>
+				  </tr>
+				</tbody>
+			</nz-table>
+		</div>
+	</nz-tab>
+	<nz-tab nzTitle="产品分类查询">
+		<!-- 产品分类查询 -->
+		<div class="wrap">
+			<div class="top">
+				<span>产品分类查询:</span>
+				<br>
+				<div class="inp">
+					<nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+						<input type="text" nz-input placeholder="请输入查询内容" class="inp" />
+					</nz-input-group>
+					<ng-template #suffixIconButton>
+						<button nz-button nzType="primary" nzSearch><i nz-icon type="search"></i></button>
+					</ng-template>
+				</div>
+			</div>
+			<div class="center">
+				<nz-table>
+					<thead>
+						<tr>
+							<th nzWidth="150px">产品名称</th>
+							<th nzWidth="150px">生产日期</th>
+							<th>产品信息</th>
+						</tr>
+					</thead>
+				</nz-table>
+			</div>
+		</div>
+	</nz-tab>
+	<nz-tab nzTitle="产品详情">
+		<!-- 产品详情 -->
+		<div class="item_introduce">
+			<div class="cpjs">产品介绍</div>
+		</div>
+		<div class="item_text">
+			<p>这是一段介绍文字这是一段介绍文字这是一段介绍文字.................................................</p>
+			<hr>
+			<p>这是一段介绍文字这是一段介绍文字这是一段介绍文字.................................................</p>
+			<hr>
+			<p>这是一段介绍文字这是一段介绍文字这是一段介绍文字.................................................</p>
+			<hr>
+			<p>这是一段介绍文字这是一段介绍文字这是一段介绍文字.................................................</p>
+			<hr>
+		</div>
+		<div class="yellow">
+
+		</div>
+		<div class="green">
+
+		</div>
+	</nz-tab>
+</nz-tabset>
+
+<!-- 修改 -->
+<nz-drawer [nzBodyStyle]="{ height: 'calc(100% - 55px)', overflow: 'auto', 'padding-bottom': '53px' }"
+	[nzMaskClosable]="false" [nzWidth]="720" [nzVisible]="visible" nzTitle="产品修改" (nzOnClose)="close()">
+	<form nz-form name="Modify">
+		<div nz-row nzGutter="8">
+			<div nz-col nzSpan="12">
+				<nz-form-item>
+					<nz-form-label>产品名称</nz-form-label>
+					<nz-form-control>
+						<input nz-input placeholder="请修改产品名称" />
+					</nz-form-control>
+				</nz-form-item>
+			</div>
+		</div>
+		<div nz-row nzGutter="8">
+			<div nz-col nzSpan="12">
+				<nz-form-item>
+					<nz-form-label>生产日期</nz-form-label>
+					<br>
+					<nz-date-picker [nzFormat]="dateFormat"></nz-date-picker>
+				</nz-form-item>
+			</div>
+		</div>
+		<div nz-row nzGutter="8">
+			<div nz-col nzSpan="24">
+				<nz-form-item>
+					<nz-form-label>产品信息</nz-form-label>
+					<nz-form-control>
+						<textarea nz-input placeholder="请修改产品信息" [nzAutosize]="{ minRows: 4, maxRows: 4 }"></textarea>
+					</nz-form-control>
+				</nz-form-item>
+			</div>
+		</div>
+	</form>
+	<div class="footer">
+		<button type="button" (click)="close()" class="ant-btn" style="margin-right: 8px;"><span>取消修改</span></button>
+		<button type="button" (click)="close()" class="ant-btn ant-btn-primary"><span>确认修改</span></button>
+	</div>
+</nz-drawer>
+
+<!-- 添加 -->
+<nz-drawer [nzBodyStyle]="{ height: 'calc(100% - 55px)', overflow: 'auto', 'padding-bottom': '53px' }"
+	[nzMaskClosable]="false" [nzWidth]="720" [nzVisible]="visible1" nzTitle="产品添加" (nzOnClose)="close1()">
+	<form nz-form name="add">
+		<div nz-row nzGutter="8">
+			<div nz-col nzSpan="12">
+				<nz-form-item>
+					<nz-form-label>产品名称</nz-form-label>
+					<nz-form-control>
+						<input nz-input placeholder="请输入产品名称" />
+					</nz-form-control>
+				</nz-form-item>
+			</div>
+		</div>
+		<div nz-row nzGutter="8">
+			<div nz-col nzSpan="12">
+				<nz-form-item>
+					<nz-form-label>生产日期</nz-form-label>
+					<br>
+					<nz-date-picker [nzFormat]="dateFormat"></nz-date-picker>
+				</nz-form-item>
+			</div>
+		</div>
+		<div nz-row nzGutter="8">
+			<div nz-col nzSpan="24">
+				<nz-form-item>
+					<nz-form-label>产品信息</nz-form-label>
+					<nz-form-control>
+						<textarea nz-input placeholder="请输入产品信息" [nzAutosize]="{ minRows: 4, maxRows: 4 }"></textarea>
+					</nz-form-control>
+				</nz-form-item>
+			</div>
+		</div>
+	</form>
+	<div class="footer">
+		<button type="button" (click)="close1()" class="ant-btn" style="margin-right: 8px;"><span>取消添加</span></button>
+		<button type="button" (click)="close1()" class="ant-btn ant-btn-primary"><span>确认添加</span></button>
+	</div>
+</nz-drawer>

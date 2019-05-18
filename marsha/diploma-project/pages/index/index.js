@@ -1,26 +1,31 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+const { $Toast } = require('../../plugin/iview/base/index');
 Page({
   data: {
-    userName: '',
-    password: '',
+    userName: '45',
+    password: '45',
     role: [{
         name: '学生',
+        value: 'stu'
       },
       {
-        name: '指导老师'
+        name: '指导老师',
+        value: 'tutor'
       },
       {
-        name: '教研室'
+        name: '教研室',
+        value: 'admin'
       },
       {
-        name: '专家'
+        name: '专家',
+        value: 'expert'
       }
     ],
     sheetVisible: false,
-    roleSelected: '',
+    roleSelected: 'tutor',
+    roleSelectedName: '指导老师',
     motto: '欢迎使用徐工·毕业设计信息管理平台',
     userInfo: {},
     hasUserInfo: false,
@@ -61,13 +66,12 @@ Page({
     }
   },
   getUserInfo: function(e) {
-    console.log(e);
     app.globalData.userInfo = e.detail.userInfo;
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     });
-    this.getPhoneNumber();
+    // this.getPhoneNumber();
   },
   getPhoneNumber(e) {
     console.log(e.detail.errMsg)
@@ -86,13 +90,37 @@ Page({
   },
   handleClickRole({ detail  }) {
     this.setData({
-      roleSelected: this.data.role[detail.index].name
+      roleSelected: this.data.role[detail.index].value,
+      roleSelectedName: this.data.role[detail.index].name
     });
     this.handleCancelRole();
   },
   login(){
-    wx.redirectTo({
-      url: '/pages/stu/stu?param=' + this.data.roleSelected,
-    })
+    const _this = this;
+    const data = {
+      account: this.data.userName,
+      password: this.data.password,
+      usertype: this.data.roleSelected
+    };
+    wx.request({
+      url: app.globalData.httpUrl + 'user/login.action',
+      data: data,
+      success: function (r) { _this.request(r) },
+      fail:function(r){  },
+      complete:function(r){_this.request(r)}
+    });
+  },
+  request(r){
+    if(r.statusCode === 200 && r.data.success){
+      wx.redirectTo({
+        url: '/pages/stu/stu?param=' + this.data.roleSelected,
+      });
+      wx.setStorageSync('tutorinfo', r.data.tutorinfo)
+    }else{
+      $Toast({
+        content: r.data.msg,
+        type: 'error'
+      });
+    }
   }
 })

@@ -1,39 +1,19 @@
 // pages/student-application/student-application.js
+const { $Toast } = require('../../plugin/iview/base/index');
+const app = getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    items: [
-      {
-        title: "申请校外毕设：",
-        people: "申请人：",
-        name: "苏大好",
-        time: "申请时间：",
-        date: "2018/2/25",
-        state: "申请状态：",
-        approval: "已审批"
-      },
-      {
-        title: "申请校外毕设：",
-        people: "申请人：",
-        name: "王二麻",
-        time: "申请时间：",
-        date: "2018/3/1",
-        state: "申请状态：",
-        approval: "待审批"
-      },
-
-    ]
-
+    items: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**
@@ -47,7 +27,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.seletPracticedepartByTutotid();
   },
 
   /**
@@ -83,5 +63,35 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  seletPracticedepartByTutotid(){
+    const tutorid = wx.getStorageSync('tutorinfo').tutorid;
+    const _this = this;
+    wx.request({
+      url: app.globalData.httpUrl + 'weapp/seletPracticedepartBySaccount.action?tutorid=' + tutorid,
+      success: function(r){
+        _this.setData({
+          items: r.data
+        });
+        console.log(r)
+      },
+      fail: function(r){}
+    })
+  },
+  /**
+   * 请求回调
+   */
+  request(r) {
+    if (r.statusCode === 200) {
+      this.setData({
+        items: r.data
+      });
+      console.log(JSON.stringify(r.data));
+    } else {
+      $Toast({
+        content: JSON.stringify(r),
+        type: 'error'
+      });
+    }
   }
 })

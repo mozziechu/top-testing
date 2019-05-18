@@ -1,30 +1,25 @@
 // pages/reporting-details/reporting-details.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    items: [
-      {
-        title: "期中汇报：",
-        time: "有效时间",
-        date: "2019年2月25日-2019年3月3日",
-        sub: "提交状态",
-        submitted: "已提交(点击可查看)",
-        read: "评阅状态",
-        toberead: "待评阅",
-      },
-
-
-    ]
+    item: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const saccount = options.saccount; 
+    const _this = this;
+    wx.request({
+      url: app.globalData.httpUrl + 'weapp/selectMidtermcheckBySaccount.action?saccount=' + saccount,
+      success: function (r) { _this.request(r) },
+      fail: function (r) { _this.request(r) }
+    });
   },
 
   /**
@@ -74,5 +69,22 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  /**
+   * 请求回调
+   */
+  request(r) {
+    if (r.statusCode === 200) {
+      this.setData({
+        item: r.data
+      });
+      console.log(JSON.stringify(r.data));
+    } else {
+      $Toast({
+        content: JSON.stringify(r),
+        type: 'error'
+      });
+    }
   }
 })

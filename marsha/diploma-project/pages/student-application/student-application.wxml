@@ -1,32 +1,28 @@
 <!--pages/student-application/student-application.wxml-->
+<!-- 学生申请 -->
 <view>
   <i-row i-class="class1" wx:for="{{items}}" wx:key="key">
     <i-col span="24" i-class="col-class">
-      <view>{{item.title}}</view>
+      <view>{{item.sname}}</view>
     </i-col>
 
     <i-col span="12" i-class="col-class">
-      <view>{{item.people}}</view>
+      <view>学号：{{item.saccount}}</view>
     </i-col>
 
     <i-col span="12" i-class="col-class">
-      <view>{{item.name}}</view>
+      <view> 班级： {{item.classname}}</view>
     </i-col>
 
     <i-col span="12" i-class="col-class">
-      <view>{{item.time}}</view>
+      <view>指导老师：{{item.ptutorname}}</view>
     </i-col>
 
     <i-col span="12" i-class="col-class">
-      <view>{{item.date}}</view>
+      <view> 实习单位： {{item.punit}}</view>
     </i-col>
 
-    <i-col span="12" i-class="col-class">
-      <view>{{item.state}}</view>
-    </i-col>
-
-    <i-col span="12" i-class="col-class">
-      <view>{{item.approval}}</view>
-    </i-col>
   </i-row>
 </view>
+
+<i-toast id="toast" />

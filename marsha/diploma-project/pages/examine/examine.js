@@ -1,4 +1,5 @@
 // pages/examine/examine.js
+const app = getApp();
 Page({
 
   /**

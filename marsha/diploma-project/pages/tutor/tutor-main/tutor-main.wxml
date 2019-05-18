@@ -1,0 +1,79 @@
+<!--pages/tutor/tutor-main/tutor-main.wxml-->
+<view class="scroll-view">
+  <view class="logo-style">
+    <image style="width: 200px; height: 200px;" mode="aspectFill" src="/assets/img/logo_tutor.svg"></image>
+  </view>
+  <view>
+    <i-notice-bar icon="systemprompt" loop>
+      2019年毕业生，毕业设计答辩将于下周(5月18日)开展，请各位同学抓紧时间，积极准备。加油，好孩子！
+    </i-notice-bar>
+  </view>
+
+  <i-grid>
+    <navigator url='../../pages/double-allocation/double-allocation'>
+      <i-grid-item>
+        <i-grid-icon>
+          <i-icon type="group" size="28" color="#80848f" />
+        </i-grid-icon>
+        <i-grid-label>双选分配</i-grid-label>
+      </i-grid-item>
+    </navigator>
+
+    <navigator url='../../pages/weekly/weekly'>
+      <i-grid-item>
+        <i-grid-icon>
+          <i-icon type="task" size="28" color="#80848f" />
+        </i-grid-icon>
+        <i-grid-label>周报</i-grid-label>
+      </i-grid-item>
+    </navigator>
+
+    <navigator url='../../pages/graduation/graduation'>
+      <i-grid-item>
+        <i-grid-icon>
+          <i-icon type="brush" size="28" color="#80848f" />
+        </i-grid-icon>
+        <i-grid-label>校外毕设</i-grid-label>
+      </i-grid-item>
+    </navigator>
+  </i-grid>
+
+
+  <i-grid>
+    <navigator url='../../pages/materials/materials'>
+      <i-grid-item>
+        <i-grid-icon>
+          <i-icon type="brush" size="28" color="#80848f" />
+        </i-grid-icon>
+        <i-grid-label>实习材料</i-grid-label>
+      </i-grid-item>
+    </navigator>
+    <navigator url='../../pages/interim-report/interim-report'>
+      <i-grid-item>
+        <i-grid-icon>
+          <i-icon type="brush" size="28" color="#80848f" />
+        </i-grid-icon>
+        <i-grid-label>期中汇报</i-grid-label>
+      </i-grid-item>
+    </navigator>
+  </i-grid>
+<!-- 
+  <view>
+    <view class="center-title">
+      <text>大家都在看</text>
+    </view>
+
+    <i-card title="实习材料说明" extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+    </i-card>
+
+    <i-card title="校外申请通知" extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+    </i-card>
+  </view> -->
+</view>
+
+<i-tab-bar current="{{ current }}" bindchange="handleChange" fixed='true'>
+  <i-tab-bar-item key="tutor-main" icon="homepage" current-icon="homepage_fill" title="信小助"></i-tab-bar-item>
+  <i-tab-bar-item key="tutor-plan" icon="activity" current-icon="activity_fill" title="安排"></i-tab-bar-item>
+  <i-tab-bar-item key="tutor-self" icon="mine" current-icon="mine_fill" title="我的"></i-tab-bar-item>
+</i-tab-bar>
+

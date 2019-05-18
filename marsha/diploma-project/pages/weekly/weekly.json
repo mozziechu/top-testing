@@ -1,11 +1,8 @@
 {
   "usingComponents": {
-    "i-steps": "../../../plugin/iview/steps/index",
-    "i-step": "../../../plugin/iview/step/index",
-    "i-tab-bar": "../../../plugin/iview/tab-bar/index",
-    "i-tab-bar-item": "../../../plugin/iview/tab-bar-item/index",
     "i-row": "../../plugin/iview/row/index",
-    "i-col": "../../plugin/iview/col/index"
+    "i-col": "../../plugin/iview/col/index",
+    "i-toast": "../../plugin/iview/toast/index"
   },
-  "navigationBarTitleText": "信小助给你排的计划"
+  "navigationBarTitleText": "周报"
 }

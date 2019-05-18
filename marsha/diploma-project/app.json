@@ -1,15 +1,16 @@
 {
   "pages": [
-    
-    "pages/stu/stu-self/stu-self",
     "pages/index/index",
+    "pages/tutor/tutor-main/tutor-main",
+    "pages/tutor/tutor-plan/tutor-plan",
+    "pages/tutor/tutor-self/tutor-self",
     "pages/logs/logs",
     "pages/stu/stu",
     "pages/stu/stu-plan/stu-plan",
+    "pages/stu/stu-self/stu-self",
     "pages/double-allocation/double-allocation",
     "pages/examine/examine",
     "pages/weekly/weekly",
-    "pages/check-weekly/check-weekly",
     "pages/graduation/graduation",
     "pages/materials/materials",
     "pages/interim-report/interim-report",
@@ -19,8 +20,9 @@
     "pages/my-news/my-news",
     "pages/mentor-allocation/mentor-allocation",
     "pages/project-declaration/project-declaration",
-    "pages/student-application/student-application"
-
+    "pages/student-application/student-application",
+    "pages/double-detail/double-detail",
+    "pages/account-manage/account-manage"
   ],
   "window": {
     "backgroundTextStyle": "light",

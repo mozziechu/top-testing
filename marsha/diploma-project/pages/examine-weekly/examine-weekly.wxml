@@ -1,80 +1,33 @@
 <!--pages/examine-weekly/examine-weekly.wxml-->
+<!-- 周报详情 -->
 <view>
   <i-row wx:for="{{items}}" wx:key="key">
-    <i-col offset="1" span="22" i-class="class1">
+    <i-col offset="1" span="22" i-class="class{{item.week}}">
       <i-col offset="1" span="22" i-class="col-class">
-        <view style='font-size:16px'>{{item.title}}</view>
+        <view style='font-size:16px'>第{{item.week}}周</view>
       </i-col>
+
       <i-col offset="1" span="7" i-class="col-class">
-        <view>{{item.people}}</view>
+        <view>日期</view>
       </i-col>
       <i-col span="15" i-class="col-class">
-        <view style='font-size:12px;'>{{item.name}}</view>
+        <view style='font-size:12px;'> {{item.startdate}} ~ {{item.enddate}} </view>
       </i-col>
+
       <i-col offset="1" span="7" i-class="col-class">
-        <view>{{item.time}}</view>
+        <view>报告内容</view>
       </i-col>
       <i-col span="15" i-class="col-class">
-        <view>{{item.date}}</view>
+        <view>{{item.reportcontent}}</view>
       </i-col>
+
       <i-col offset="1" span="7" i-class="col-class">
-        <view>{{item.state}}</view>
+        <view>指导意见</view>
       </i-col>
       <i-col span="15" i-class="col-class">
-        <view>{{item.approval}}</view>
+        <view>{{item.guidecomment}}</view>
       </i-col>
     </i-col>
   </i-row>
 
-  <i-row wx:for="{{items1}}" wx:key="key">
-    <i-col offset="1" span="22" i-class="class2">
-      <i-col offset="1" span="22" i-class="col-class">
-        <view style='font-size:16px'>{{item.title1}}</view>
-      </i-col>
-      <i-col offset="1" span="7" i-class="col-class">
-        <view>{{item.people1}}</view>
-      </i-col>
-      <i-col span="15" i-class="col-class">
-        <view style='font-size:12px;'>{{item.name1}}</view>
-      </i-col>
-      <i-col offset="1" span="7" i-class="col-class">
-        <view>{{item.time1}}</view>
-      </i-col>
-      <i-col span="15" i-class="col-class">
-        <view>{{item.date1}}</view>
-      </i-col>
-      <i-col offset="1" span="7" i-class="col-class">
-        <view>{{item.state1}}</view>
-      </i-col>
-      <i-col span="15" i-class="col-class">
-        <view>{{item.approval1}}</view>
-      </i-col>
-    </i-col>
-  </i-row>
-
-  <i-row wx:for="{{items2}}" wx:key="key">
-    <i-col offset="1" span="22" i-class="class3">
-      <i-col offset="1" span="22" i-class="col-class">
-        <view style='font-size:16px'>{{item.title2}}</view>
-      </i-col>
-      <i-col offset="1" span="7" i-class="col-class">
-        <view>{{item.people2}}</view>
-      </i-col>
-      <i-col span="15" i-class="col-class">
-        <view style='font-size:12px;'>{{item.name2}}</view>
-      </i-col>
-      <i-col offset="1" span="7" i-class="col-class">
-        <view>{{item.time2}}</view>
-      </i-col>
-      <i-col span="15" i-class="col-class">
-        <view>{{item.date2}}</view>
-      </i-col>
-      <i-col offset="1" span="7" i-class="col-class">
-        <view>{{item.state2}}</view>
-      </i-col>
-      <i-col span="15" i-class="col-class">
-        <view>{{item.approval2}}</view>
-      </i-col>
-    </i-col>
-  </i-row>
 </view>

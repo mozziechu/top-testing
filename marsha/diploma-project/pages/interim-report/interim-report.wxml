@@ -1,39 +1,32 @@
 <!--pages/interim-report/interim-report.wxml-->
-<view>
-  <view style='width:70%;float:left;' class="section">
-    <input placeholder="搜索..." auto-focus />
-  </view>
-  <view style='width:30%;float:left;text-align:center;'>
-    取消1
-  </view>
-  <view style='clear:both'></view>
-</view>
+<!-- 期中汇报 -->
+
 <view class='weekly'>
   <i-row>
     <i-col offset="1" span="22" i-class="class1">
 
-      <i-row i-class="material" wx:for="{{items}}" wx:key="key">
+      <i-row i-class="material list" wx:for="{{items}}" wx:key="key" bindtap="navigator" data-saccount="{{item.saccount}}">
 
-        <i-col offset="1" span="8" i-class="list">
+        <i-col offset="1" span="8">
           <view>
-            <view style='font-size:13px;margin-top:10px;'>{{item.id}}</view>
-            <view style='font-size:12px;margin-top:10px;margin-bottom:10px;'>{{item.major}}</view>
+            <view style='font-size:13px;margin-top:10px;'>{{item.saccount}}</view>
+            <view style='font-size:12px;margin-top:10px;margin-bottom:10px;'> {{item.sname}} | {{item.classname}} </view>
           </view>
         </i-col>
 
-        <i-col span="8" i-class="submit">
-          <view style='font-size:13px;line-height:63px;'>
-            <li style="color:rgb(95, 216, 247);">{{item.title}}
-              <span style="color:rgb(247, 119, 0)">
-                <b style="color:gray;">|</b>{{item.title1}}</span>
-            </li>
+        <i-col offset="1" span="8">
+          <view>
+            <view style='font-size:13px;margin-top:10px;'>电话： </view>
+            <view style='font-size:12px;margin-top:10px;margin-bottom:10px;'> {{item.phone}}</view>
           </view>
         </i-col>
 
-        <i-col span="6" i-class="particulars">
-          <navigator style='font-size:13px;line-height:63px;' url='../../pages/reporting-details/reporting-details'>{{item.details}}</navigator>
-        </i-col>
+        <!-- <i-col span="6" i-class="particulars">
+          <navigator style='font-size:13px;line-height:63px;' url="/pages/examine-weekly/examine-weekly"> 查看详情 </navigator>
+        </i-col> -->
       </i-row>
     </i-col>
   </i-row>
 </view>
+
+<i-toast id="toast" />

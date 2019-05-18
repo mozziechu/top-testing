@@ -10,18 +10,18 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        console.log("login: " + JSON.stringify(res));
+        // console.log("login: " + JSON.stringify(res));
       }
     });
     // 获取用户信息
     wx.getSetting({
       success: res => {
-        console.log("getSetting: " + JSON.stringify(res));
+        // console.log("getSetting: " + JSON.stringify(res));
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
-              console.log("getUserInfo: " + JSON.stringify(res));
+              // console.log("getUserInfo: " + JSON.stringify(res));
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
 
@@ -37,6 +37,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    httpUrl: "http://localhost:8080/xdbs/"
   }
 })

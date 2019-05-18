@@ -1,4 +1,4 @@
-// pages/check-weekly/check-weekly.js
+// pages/tutor/tutor-self/tutor-self.js
 Page({
 
   /**

@@ -1,4 +1,5 @@
 // pages/my-news/my-news.js
+const app = getApp();
 Page({
 
   /**

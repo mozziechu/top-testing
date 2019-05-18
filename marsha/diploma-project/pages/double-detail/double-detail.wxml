@@ -1,0 +1,29 @@
+<!--pages/double-detail/double-detail.wxml-->
+<!-- 指导分配 -->
+<view>
+  <i-row>
+    <i-col offset="1" span="22" i-class="class">
+      <i-col offset="1" span="22" i-class="col-class">
+        <view style='font-size:16px'>{{item.sname}}</view>
+      </i-col>
+      <i-col offset="1" span="7" i-class="col-class">
+        <view>{{item.classname}}</view>
+      </i-col>
+      <i-col span="15" i-class="col-class">
+        <view style='font-size:12px;'>{{item.subjectname}}</view>
+      </i-col>
+      <i-col offset="1" span="7" i-class="col-class">
+        <view>{{item.subjecttype}}</view>
+      </i-col>
+      <i-col span="15" i-class="col-class">
+        <view>{{item.phone}}</view>
+      </i-col>
+      <i-col offset="1" span="7" i-class="col-class">
+        <view>{{item.qq}}</view>
+      </i-col>
+      <i-col span="15" i-class="col-class">
+        <view>{{item.sex}}</view>
+      </i-col>
+    </i-col>
+  </i-row>
+</view>

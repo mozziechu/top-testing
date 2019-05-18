@@ -5,44 +5,45 @@
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      <text class="userinfo-nickname">15计专本 | 20150566104</text>
+      <text class="userinfo-nickname"> {{tutorinfo.tprank}} | {{tutorinfo.tdegree}}</text>
     </block>
   </view>
 
   <view class="main-menu">
 
     <i-grid i-class="grid-style">
-    <navigator url="/pages/double-allocation/double-allocation">
-      <i-grid-item i-class="grid-style">
-        <i-grid-icon>
-          <i-icon type="dynamic" size="32" color="#54b5e0" />
-        </i-grid-icon>
-        <i-grid-label>导师分配</i-grid-label>
-      </i-grid-item>
-    </navigator>
-      
-<navigator url='/pages/double-allocation/double-allocation'>
-<i-grid-item i-class="grid-style">
-        <i-grid-icon>
-          <i-icon type="brush" size="32" color="#ff5b5b" />
-        </i-grid-icon>
-        <i-grid-label>课题申报</i-grid-label>
-      </i-grid-item>
-</navigator>
-      
-<navigator url='/pages/student-application/student-application'>
-<i-grid-item i-class="grid-style">
-        <i-grid-icon>
-          <i-icon type="createtask" size="32" color="#ff8c40" />
-        </i-grid-icon>
-        <i-grid-label>学生申请</i-grid-label>
-      </i-grid-item>
-</navigator>
-      
+      <navigator url="/pages/mentor-allocation/mentor-allocation">
+        <i-grid-item i-class="grid-style">
+          <i-grid-icon>
+            <i-icon type="dynamic" size="32" color="#54b5e0" />
+          </i-grid-icon>
+          <i-grid-label>导师分配</i-grid-label>
+        </i-grid-item>
+      </navigator>
+
+      <!-- <navigator url='/pages/project-declaration/project-declaration'> -->
+      <navigator url='/pages/double-allocation/double-allocation'>
+        <i-grid-item i-class="grid-style">
+          <i-grid-icon>
+            <i-icon type="brush" size="32" color="#ff5b5b" />
+          </i-grid-icon>
+          <i-grid-label>课题申报</i-grid-label>
+        </i-grid-item>
+      </navigator>
+
+      <navigator url='/pages/student-application/student-application'>
+        <i-grid-item i-class="grid-style">
+          <i-grid-icon>
+            <i-icon type="createtask" size="32" color="#ff8c40" />
+          </i-grid-icon>
+          <i-grid-label>学生申请</i-grid-label>
+        </i-grid-item>
+      </navigator>
+
 
     </i-grid>
 
-    <navigator url='/pages/double-allocation/double-allocation'>
+    <navigator url='/pages/account-manage/account-manage'>
       <i-cell-group>
         <i-cell title="账号管理" is-link></i-cell>
       </i-cell-group>

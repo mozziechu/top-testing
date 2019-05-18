@@ -1,4 +1,5 @@
 // pages/project-declaration/project-declaration.js
+const app = getApp();
 Page({
 
   /**

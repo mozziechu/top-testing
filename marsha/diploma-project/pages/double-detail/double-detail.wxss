@@ -1,0 +1,9 @@
+/* pages/double-detail/double-detail.wxss */
+.class {
+  border: 1px solid #ff6161;
+  border-radius: 5px;
+  line-height: 30px;
+  font-size: 13px;
+  margin-bottom: 20px;
+  background: #ff6161;
+}

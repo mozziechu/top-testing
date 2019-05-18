@@ -1,11 +1,11 @@
 <!--pages/stu/student.wxml-->
 <view class="scroll-view">
   <view class="logo-style">
-    <image style="width: 200px; height: 200px; background-color: #eeeeee;" mode="aspectFill" src="../../assets/img/logo.svg"></image>
+    <image style="width: 200px; height: 200px;" mode="aspectFill" src="../../assets/img/logo_tutor.svg"></image>
   </view>
   <view>
     <i-notice-bar icon="systemprompt" loop>
-      2019年毕业生，毕业设计开题报告答辩将于下周一(3月4日)开展，请各位同学放平心态，耐心准备。毕设只是一次大考，要知道工作的历程，是用数不尽的艰辛堆砌的。加油，好孩子！
+      2019年毕业生，毕业设计答辩将于下周(5月18日)开展，请各位同学抓紧时间，积极准备。加油，好孩子！
     </i-notice-bar>
   </view>
 

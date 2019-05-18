@@ -1,18 +1,25 @@
 /* pages/mentor-allocation/mentor-allocation.wxss */
 /* 盒子边框线 */
 .class1{
-  height: 100%;
   border: 1px solid gainsboro;
   border-radius: 5px;
-  
-  
 }
 .material{
-  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+}
+/* 列表底部边框线 */
+.list{
+  border-bottom: 1px solid rgb(216, 216, 216);
 }
 .submit{
   text-align: center;
+  border-bottom: 1px solid rgb(216, 216, 216);
 }
 .particulars{
   text-align: center;
+  border-bottom: 1px solid rgb(216, 216, 216);
+}
+/* 列表偏移 */
+.weekly{
+  margin-top: 10px;
 }

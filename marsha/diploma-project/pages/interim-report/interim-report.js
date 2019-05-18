@@ -1,16 +1,12 @@
 // pages/interim-report/interim-report.js
+const { $Toast } = require('../../plugin/iview/base/index');
+const app = getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    items: [
-      { id: "20150565203", major: "苏大好|15计转本", title: "已提交", title1: "待批阅", details: "查看详情" },
-      { id: "20150566104", major: "王麻子|15计嵌1", title: "已提交", title1: "待批阅", details: "查看详情" },
-      { id: "20150566104", major: "李二|15计单1", title: "已提交", title1: "待批阅", details: "查看详情" }
-    ]
-
+    items: []
   },
 
   /**
@@ -31,7 +27,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.selectStudentInfoByassount();
   },
 
   /**
@@ -67,5 +63,48 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  /**
+   * 根据tutorid获取学生列表
+   * 从本地缓存中获取tutorid
+   */
+  selectStudentInfoByassount: function () {
+    const tutorinfo = wx.getStorageSync('tutorinfo');
+    const _this = this;
+    wx.request({
+      url: app.globalData.httpUrl + 'weapp/getStudentsListByTutorid.action',
+      data: {
+        tutorid: tutorinfo.tutorid
+      },
+      success: function (r) { _this.request(r) },
+      fail: function (r) { },
+      complete: function (r) { _this.request(r) }
+    });
+  },
+  /**
+   * 请求回调
+   */
+  request(r) {
+    if (r.statusCode === 200) {
+      this.setData({
+        items: r.data
+      });
+      console.log(JSON.stringify(r.data));
+    } else {
+      $Toast({
+        content: JSON.stringify(r),
+        type: 'error'
+      });
+    }
+  },
+  /**
+   * 导航
+   */
+  navigator(e) {
+    const saccount = e.currentTarget.dataset.saccount;
+    wx.navigateTo({
+      url: '/pages/reporting-details/reporting-details?saccount=' + saccount,
+    });
   }
 })

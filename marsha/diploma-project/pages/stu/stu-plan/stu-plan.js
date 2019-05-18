@@ -6,7 +6,7 @@ Page({
    */
   data: {
     current: 'stu-plan',
-    verticalCurrent: 2,
+    verticalCurrent: 12,
     planArry: [{
       'term': '2018-2019(2)',
       'startDate': '2018-12-26',

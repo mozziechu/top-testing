@@ -5,6 +5,7 @@
     "i-radio-group": "../../plugin/iview/radio-group/index",
     "i-radio": "../../plugin/iview/radio/index",
     "i-action-sheet": "../../plugin/iview/action-sheet/index",
-    "i-icon": "../../plugin/iview/icon/index"
+    "i-icon": "../../plugin/iview/icon/index",
+    "i-toast": "../../plugin/iview/toast/index"
   }
 }

@@ -2,6 +2,7 @@
 
 .logo-style {
   text-align: center;
+  background-color: #61c3ee;
 }
 
 .center-title {

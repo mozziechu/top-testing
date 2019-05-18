@@ -1,4 +1,5 @@
 // pages/examine-graduation/examine-graduation.js
+const app = getApp();
 Page({
 
   /**
@@ -16,14 +17,21 @@ Page({
     ],
     items1: [
       { title: "申请状态：", details: "待审批" },
-    ]
+    ],
+    item:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const sid = options.sid;
+    const _this = this;
+    wx.request({
+      url: app.globalData.httpUrl + 'weapp/selectPracticedepartBySid.action?sid=' + sid,
+      success: function (r) { _this.request(r) },
+      fail: function (r) { _this.request(r) }
+    });
   },
 
   /**
@@ -73,5 +81,21 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  /**
+     * 请求回调
+     */
+  request(r) {
+    if (r.statusCode === 200) {
+      this.setData({
+        item: r.data
+      });
+      console.log(JSON.stringify(r.data));
+    } else {
+      $Toast({
+        content: JSON.stringify(r),
+        type: 'error'
+      });
+    }
   }
 })

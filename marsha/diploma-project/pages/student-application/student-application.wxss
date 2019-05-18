@@ -1,12 +1,13 @@
 /* pages/student-application/student-application.wxss */
 /* 盒子格式 */
-.class1{
+.class1 {
   width: 90%;
   height: 100%;
+  line-height: 30px;
   border: 1px solid gainsboro;
   border-radius: 5px;
-  line-height: 30px;
   font-size: 13px;
   margin: auto;
   margin-top: 10px;
- }
+  padding-left: 10px;
+}

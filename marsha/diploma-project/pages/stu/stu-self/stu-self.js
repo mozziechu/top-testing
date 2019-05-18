@@ -10,7 +10,8 @@ Page({
     current: 'stu-self',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    tutorinfo: {}
   },
 
   /**
@@ -18,6 +19,9 @@ Page({
    */
   onLoad: function(options) {
     this.getUserInfo();
+    this.setData({
+      'tutorinfo': wx.getStorageSync('tutorinfo')
+    })
   },
 
   /**

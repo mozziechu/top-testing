@@ -1,4 +1,6 @@
 // pages/materials/materials.js
+const { $Toast } = require('../../plugin/iview/base/index');
+const app = getApp();
 Page({
 
   /**
@@ -30,7 +32,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.selectStudentInfoBySid();
   },
 
   /**
@@ -66,5 +68,49 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  /**
+   * 根据tutorid获取学生列表
+   * 从本地缓存中获取tutorid
+   */
+  selectStudentInfoBySid: function () {
+    const tutorinfo = wx.getStorageSync('tutorinfo');
+    const _this = this;
+    wx.request({
+      url: app.globalData.httpUrl + 'weapp/getStudentsListByTutorid.action',
+      data: {
+        tutorid: tutorinfo.tutorid
+      },
+      success: function (r) {
+        _this.request(r)
+      },
+      fail: function (r) { }
+    });
+  },
+  /**
+   * 请求回调
+   */
+  request(r) {
+    if (r.statusCode === 200) {
+      const sid = r.data.sid;
+      this.setData({
+        items: r.data
+      });
+      console.log(JSON.stringify(r.data));
+    } else {
+      $Toast({
+        content: JSON.stringify(r),
+        type: 'error'
+      });
+    }
+  },
+  /**
+   * 导航
+   */
+  navigator(e) {
+    const saccount = e.currentTarget.dataset.saccount;
+    wx.navigateTo({
+      url: '/pages/examine-weekly/examine-weekly?saccount=' + saccount,
+    });
   }
 })

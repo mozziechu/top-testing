@@ -1,22 +1,56 @@
 <!--pages/examine-graduation/examine-graduation.wxml-->
+<!-- 校外毕设详情 -->
 <view class='weekly'>
   <i-row>
     <i-col offset="1" span="22" i-class="class1">
-      <i-row i-class="material" wx:for="{{items}}" wx:key="key">
-        <i-col offset="1" span="12" i-class="submit">
+      <i-row i-class="material">
+        <i-col offset="1" span="6" i-class="submit">
           <view style='font-size:16px;line-height:40px;font-weight：600'>
-            <li>{{item.title}}</li>
+            <li>毕业设计标题</li>
           </view>
         </i-col>
-        <i-col  span="9" i-class="particulars">
-          <view style='font-size:13px;line-height:40px;'>{{item.details}}</view>
+        <i-col span="15" i-class="particulars">
+          <view style='font-size:13px;line-height:40px;'>{{item.subjectname}}</view>
+        </i-col>
+      </i-row>
+
+      <i-row i-class="material">
+        <i-col offset="1" span="6" i-class="submit">
+          <view style='font-size:16px;line-height:40px;font-weight：600'>
+            <li>学生姓名</li>
+          </view>
+        </i-col>
+        <i-col span="15" i-class="particulars">
+          <view style='font-size:13px;line-height:40px;'>{{item.sname}}</view>
+        </i-col>
+      </i-row>
+
+      <i-row i-class="material">
+        <i-col offset="1" span="6" i-class="submit">
+          <view style='font-size:16px;line-height:40px;font-weight：600'>
+            <li>学号</li>
+          </view>
+        </i-col>
+        <i-col span="15" i-class="particulars">
+          <view style='font-size:13px;line-height:40px;'>{{item.saccount}}</view>
+        </i-col>
+      </i-row>
+
+      <i-row i-class="material">
+        <i-col offset="1" span="6" i-class="submit">
+          <view style='font-size:16px;line-height:40px;font-weight：600'>
+            <li>班级</li>
+          </view>
+        </i-col>
+        <i-col span="15" i-class="particulars">
+          <view style='font-size:13px;line-height:40px;'>{{item.classname}}</view>
         </i-col>
       </i-row>
     </i-col>
   </i-row>
 </view>
 
-<view class='weekly'>
+<!-- <view class='weekly'>
   <i-row>
     <i-col offset="1" span="22" i-class="class1">
       <i-row i-class="material" wx:for="{{items1}}" wx:key="key">
@@ -25,11 +59,10 @@
             <li>{{item.title}}</li>
           </view>
         </i-col>
-        <i-col  span="11">
+        <i-col span="11">
           <view style='font-size:13px;line-height:40px;text-align: center;'>{{item.details}}</view>
         </i-col>
       </i-row>
     </i-col>
   </i-row>
-</view>
-
+</view> -->

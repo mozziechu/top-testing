@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "i-row": "../../plugin/iview/row/index",
+    "i-col": "../../plugin/iview/col/index"
+  },
+  "navigationBarTitleText": "信小助"
+}

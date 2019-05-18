@@ -1,28 +1,12 @@
 // pages/mentor-allocation/mentor-allocation.js
+const { $Toast } = require('../../plugin/iview/base/index');
+const app = getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    items: [
-      {
-        title: "20150565203",
-        name: "苏大好|15计转本",
-        number: "电话：18989248040",
-      },
-      {
-        title: "20150566104",
-        name: "王麻子|15计嵌1",
-        number: "电话：18645641802",
-      },
-      {
-        title: "20150566104",
-        name: "李二|15计单1",
-        number: "电话：18814145418",
-      }
-
-    ]
+    items: []
   },
 
   /**
@@ -43,7 +27,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.selectStudentInfoBySid();
   },
 
   /**
@@ -79,5 +63,52 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  /**
+   * 根据tutorid获取学生列表
+   * 从本地缓存中获取tutorid
+   */
+  selectStudentInfoBySid: function () {
+    const tutorinfo = wx.getStorageSync('tutorinfo');
+    const _this = this;
+    wx.request({
+      url: app.globalData.httpUrl + 'weapp/getStudentsListByTutorid.action',
+      data: {
+        tutorid: tutorinfo.tutorid
+      },
+      success: function (r) { _this.request(r) },
+      fail: function (r) { },
+      complete: function (r) { _this.request(r) }
+    });
+  },
+  /**
+   * 请求回调
+   */
+  request(r) {
+    if (r.statusCode === 200) {
+      const sid = r.data.sid;
+      // wx.redirectTo({
+      //   url: '/pages/double-detail/double-detail?sid=' + sid,
+      // });
+      this.setData({
+        items: r.data
+      });
+      console.log(JSON.stringify(r.data));
+    } else {
+      $Toast({
+        content: JSON.stringify(r),
+        type: 'error'
+      });
+    }
+  },
+  /**
+   * 导航
+   */
+  navigator(e) {
+    const sid = e.currentTarget.dataset.sid;
+    wx.navigateTo({
+      url: '/pages/double-detail/double-detail?sid=' + sid,
+    });
   }
 })

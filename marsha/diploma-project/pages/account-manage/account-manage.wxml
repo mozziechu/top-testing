@@ -1,0 +1,52 @@
+<!--pages/account-manage/account-manage.wxml-->
+<form bindsubmit="formSubmit" >
+  <view class="section">
+    <view class="section_title">老师姓名:</view>
+    <input type="input" name="tname" value="{{ item.tname }}" placeholder="please input here" disabled='true'/>
+    <input type="input" name="tutorid" value="{{ item.tutorid }}" placeholder="please input here" disabled='true' style='display: none'/>
+  </view>
+
+  <view class="section">
+    <view class="section_title">用户名:</view>
+    <input type="input" name="taccount" value="{{ item.taccount }}" placeholder="please input here" disabled='true'/>
+  </view>
+
+  <view class="section">
+    <view class="section_title">密码:</view>
+    <input type="input" name="tpwd" password value="{{ item.tpwd }}" placeholder="please input here" />
+  </view>
+
+  <view class="section">
+    <view class="section_title">联系电话:</view>
+    <input type="input" name="tphone" value="{{ item.tphone }}" placeholder="please input here" />
+  </view>
+
+  <view class="section">
+    <view class="section_title">邮箱地址:</view>
+    <input type="input" name="tmail" value="{{ item.tmail }}" placeholder="please input here" />
+  </view>
+
+  <view class="section">
+    <view class="section_title">职称:</view>
+    <input type="input" name="tprank" value="{{ item.tprank }}" placeholder="please input here" disabled='true' />
+  </view>
+
+  <view class="section">
+    <view class="section_title">学历:</view>
+    <input type="input" name="tdegree" value="{{ item.tdegree }}" placeholder="please input here" disabled='true' />
+  </view>
+  <view class="btn-area">
+    <button form-type="submit" class='form-btn'  type='primary' >修改</button>
+    <button class='form-btn'  type='warn' bindtap="loginOut" >退出登录</button>
+    <button class='form-btn' type='default' bindtap="cancel">取消</button>
+  </view>
+</form>
+    <!-- <i-input value="{{ tname }}" title="老师姓名" autofocus placeholder="名字" disabled="true"/>
+    <i-input value="{{ taccount }}" title="用户名" disabled="true" />
+    <i-input value="{{ tpwd }}" title="密码"  />
+    <i-input value="{{ tphone }}" title="联系电话" placeholder="请输入手机号" />
+    <i-input value="{{ tmail }}" title="邮箱地址" placeholder="请输入详细地址(最多50字)"/>
+    <i-input value="{{ tprank }}" title="职称" disabled="true" />
+    <i-input value="{{ tdegree }}" title="学历" disabled="true" /> -->
+
+<i-toast id="toast" />
